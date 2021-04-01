@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="app">
+        <p class="error" v-cloak
+        v-if="showError">
+            {{messageError}}
+        </p>
+        <input 
+            :class="{
+                red: inputVal.length > 10,
+                blue: inputVal.length < 10,
+            }"
+            type="text" 
+            v-model="inputVal" 
+            :placeholder="placeholder">
+        <ul class="list" v-if="tasks.length > 0" v-cloak>
+            <li class="item" v-for="(item,index) in tasks">
+                <p class="text">{{item}} - {{index+1}}</p>
+                <button class="remove" @click="remove(index)">Delete</button>
+            </li>
+        </ul>
+        <div v-else>You don't have any tasks</div>
+        <button class="add" @click="add" >Add</button>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="index.js"></script>
+</body>
+</html>
