@@ -1,4 +1,4 @@
-# 3_props-emit
+# 4_dynamic-component
 
 ## Project setup
 ```
