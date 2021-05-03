@@ -20,7 +20,7 @@ export default createStore({
   },
   actions: {
     incValue(ctx, data) {
-      console.log("data", data)
+      console.log("ctx", ctx)
       setTimeout(() => {
         ctx.commit("inc", data.value)
       }, data.timeOut)
